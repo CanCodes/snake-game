@@ -54,7 +54,7 @@ void setup() {
     game.snake.len = 5;
     game.snake.pos = calloc(game.snake.len, sizeof(position));
     if (game.snake.pos == NULL) {
-        mvprintw("Memory not allocated.\n");
+        mvprintw(0, 0, "Memory not allocated.\n");
         exit(0);
     }
     game.snake.pos->x = 2;
@@ -106,7 +106,7 @@ void logic() {
             game.snake.len++;
             game.snake.pos = realloc(game.snake.pos, game.snake.len * sizeof(position));
             if (game.snake.pos == NULL) {
-                mvprintw("Memory not allocated.\n");
+                mvprintw(0, 0, "Memory not allocated.\n");
                 exit(0);
             }
             gen_new_fruit();
